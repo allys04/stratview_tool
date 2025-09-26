@@ -12,10 +12,10 @@ import pandas as pd
 import numpy as np
 import json
 
-app = FastAPI()
+stratview_app = FastAPI()
 
 
-@app.get('/')
+@stratview_app.get('/')
 def home():
     return '''<h1>Distant Reading Archive</h1>
 <p>A prototype API for reading archived data.</p>'''
@@ -24,7 +24,7 @@ def page_not_found(e):
     return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
 
-@app.get('/isapp/v1/resources/taxonomy')
+@stratview_app.get('/isapp/v1/resources/taxonomy')
 def taxonomy_request():
     
     """
@@ -49,7 +49,7 @@ def taxonomy_request():
     return results
 
 
-@app.get('/isapp/v1/resources/fieldsearch')
+@stratview_app.get('/isapp/v1/resources/fieldsearch')
 def field_request(generic_instrument_class: str | None = None):
     
     """
@@ -92,7 +92,7 @@ def field_request(generic_instrument_class: str | None = None):
     return results
 
 
-@app.get('/isapp/v1/resources/static_data_class') 
+@stratview_app.get('/isapp/v1/resources/static_data_class') 
 def static_data_class_request(instrument_type: Annotated[list[str] | None, Query()] = None, asset_type: Annotated[list[str] | None, Query()] = None, 
                               country: Annotated[list[str] | None, Query()] = None, sub_region: Annotated[list[str] | None, Query()] = None, 
                               region: Annotated[list[str] | None, Query()] = None, asset_class: Annotated[list[str] | None, Query()] = None, 
@@ -284,7 +284,7 @@ def static_data_class_request(instrument_type: Annotated[list[str] | None, Query
 
 
 
-@app.get('/isapp/v1/resources/static_data')
+@stratview_app.get('/isapp/v1/resources/static_data')
 def static_data_request(ticker: Annotated[list[str] | None, Query()] = None):
     """
 
@@ -347,7 +347,7 @@ def static_data_request(ticker: Annotated[list[str] | None, Query()] = None):
     return df0, df1
 
 
-@app.get('/isapp/v1/resources/static_strategy_data')
+@stratview_app.get('/isapp/v1/resources/static_strategy_data')
 def static_strategy_data_request(ticker: Annotated[list[str] | None, Query()] = None):
     """
 
@@ -410,7 +410,7 @@ def static_strategy_data_request(ticker: Annotated[list[str] | None, Query()] = 
     return df0, df1
 
 
-@app.get('/isapp/v1/resources/timeseries')
+@stratview_app.get('/isapp/v1/resources/timeseries')
 def timeseries_request(ticker: Annotated[list[str] | None, Query()] = None, startDate: str | None = None, endDate: str | None = None):
     """
 
@@ -543,7 +543,7 @@ def timeseries_request(ticker: Annotated[list[str] | None, Query()] = None, star
 
 
 
-@app.get('/isapp/v1/resources/strategy_historical_position_weights')
+@stratview_app.get('/isapp/v1/resources/strategy_historical_position_weights')
 def historical_pos_weights_request(strat_code: str | None = None, startDate: str | None = None, endDate: str | None = None):
     """
 
