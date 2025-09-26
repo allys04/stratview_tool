@@ -1,0 +1,6 @@
+matplotlib==3.9.1
+numpy==1.26.4
+pandas==2.2.2
+streamlit==1.42.2
+streamlit-date-picker==0.0.5
+altair==5.5.0
