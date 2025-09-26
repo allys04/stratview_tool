@@ -27,7 +27,7 @@ st.markdown("""
 #  streamlit "st.session_state" variable initialisation    
     
 if 'api_root' not in st.session_state:
-    st.session_state['api_root'] = './isapp/v1/resources'
+    st.session_state['api_root'] = 'https://stratview-api-0373e4642705.herokuapp.com/isapp/v1/resources'
 
     
 st.sidebar.header("Narrow down the asset universe by using the filters below") 
