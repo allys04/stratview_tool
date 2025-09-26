@@ -19,7 +19,7 @@ jobs:
       - name: Login to Heroku Container registry
         run: heroku container:login  
       - name: Build manually with Dockerfile-frontend
-        run: docker build -f Dockerfile-frontend -t registry.heroku.com/stratview/web
+        run: docker build -f Dockerfile-frontend -t registry.heroku.com/stratview/web .
       - name: Push image
         run: docker push registry.heroku.com/stratview/web
       - name: Release
