@@ -35,7 +35,7 @@ st.markdown("""
 #  streamlit "st.session_state" variable initialisation    
 
 if 'api_root' not in st.session_state:
-    st.session_state['api_root'] = 'https://stratview-api-0373e4642705.herokuapp.com/isapp/v1/resources'
+    st.session_state['api_root'] = 'https://stratview-0a6cd8d77f03.herokuapp.com/isapp/v1/resources'
 
 if 'persist' not in st.session_state:
     st.session_state['persist'] = 0
