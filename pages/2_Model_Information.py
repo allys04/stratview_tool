@@ -233,7 +233,7 @@ with tab2:
             
             # Time series data retrieval and processing
             data = http_verbs.get_request(api_url_4)
-            data = pd.DataFrame(data) 
+            data = pd.DataFrame(data['data']) 
             data.dropna(axis=0, how = 'any', inplace=True)    # on dates where at least one data is missing, delete everything
             
             dates = list(data['Date'])
