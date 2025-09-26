@@ -19,14 +19,8 @@ jobs:
       - name: Login to Heroku Container registry
         run: heroku container:login  
       - name: Switch stacks
-        run: heroku stack:set container -a stratview-api
+        run: heroku stack:set container -a stratview
       - name: Build and push
-        run: heroku container:push -a stratview-api web
+        run: heroku container:push -a stratview web
       - name: Release
-        run: heroku container:release -a stratview-api web  
-      - name: Switch stacks
-        run: heroku stack:set container -a stratview-frontend
-      - name: Build and push
-        run: heroku container:push -a stratview-frontend web
-      - name: Release
-        run: heroku container:release -a stratview-frontend web
+        run: heroku container:release -a stratview web  

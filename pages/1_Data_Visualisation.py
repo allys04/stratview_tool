@@ -4,6 +4,12 @@ Created on Wed May 21 01:15:24 2025
 
 @author: Alpha Sylla
 """
+import sys
+from pathlib import Path
+
+current_file = Path(__file__)    # Path of the current file
+base_path = current_file.parent.parent    # One level above the current module
+sys.path.insert(1,base_path)
 
 import streamlit as st
 import pandas as pd

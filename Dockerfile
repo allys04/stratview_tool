@@ -8,11 +8,11 @@ RUN pip3 install -r api_requirements.txt
 COPY . .
 CMD [ "sh", "-c", "uvicorn stratapi:api_app --host=0.0.0.0 --port=$PORT" ]
 
-WORKDIR /frontend_app
-COPY pages/1_Data_Visualisation.py ./pages/1_Data_Visualisation.py
-COPY pages/2_Model_Information.py ./pages/2_Model_Information.py
+COPY __init__.py ./__init__.py
 COPY http_verbs.py ./http_verbs.py
 COPY Introduction.py ./Introduction.py
+COPY pages/1_Data_Visualisation.py ./pages/1_Data_Visualisation.py
+COPY pages/2_Model_Information.py ./pages/2_Model_Information.py
 COPY frontend_requirements.txt ./frontend_requirements.txt
 RUN pip3 install -r frontend_requirements.txt
 COPY . .
