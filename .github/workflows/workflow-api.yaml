@@ -19,8 +19,8 @@ jobs:
       - name: Login to Heroku Container registry
         run: heroku container:login  
       - name: Switch stacks
-        run: heroku stack:set container -a stratview
+        run: heroku stack:set container -a stratview-api
       - name: Build and push
-        run: heroku container:push -a stratview web
+        run: heroku container:push -a stratview-api web --recursive --arg DOCKERFILE=./Dockerfile-api
       - name: Release
-        run: heroku container:release -a stratview web  
+        run: heroku container:release -a stratview-api web  
