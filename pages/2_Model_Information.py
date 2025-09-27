@@ -114,12 +114,7 @@ df2.dropna(axis=0, how='any', inplace=True)
 
 
 with tab1:
-    st.markdown("# Strategy characteristics & parameters")
-    st.write(
-        """This demo illustrates a combination of plotting and animation with
-    Streamlit. We're generating a bunch of random numbers in a loop for around
-    5 seconds. Enjoy!"""
-    )           
+    st.markdown("# Strategy characteristics & parameters")           
     
     this_key += 1
     selection_box = st.multiselect('**Choose a set of strategies to visualize**', df2.iloc[:,0], key='multiselect_'+str(this_key), placeholder='', label_visibility="visible")       
