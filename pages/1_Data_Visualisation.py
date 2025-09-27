@@ -36,7 +36,7 @@ if 'api_root' not in st.session_state:
     st.session_state['api_root'] = 'https://stratview-api-b8ee9cef86c2.herokuapp.com/isapp/v1/resources'
 
     
-st.sidebar.header("Narrow down the asset universe by using the filters below") 
+st.sidebar.header("Use the filters below to narrow down the asset universe") 
 
 this_key = 0    # Initialisation of the counter variable that will be used for key generation for the different widgets used
 

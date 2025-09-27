@@ -45,7 +45,7 @@ def persist_results():
     st.session_state['persist'] = 1 
 
     
-st.sidebar.header("Narrow down the asset universe by using the filters below") 
+st.sidebar.header("Use the filters below to narrow down the asset universe") 
 
 this_key = 0    # Initialisation of the counter variable that will be used for key generation for the different widgets used
 
